@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Full Stack Portfolio Website",
+    "description": "A full-stack portfolio website built using Node.js, Express.js, MongoDB, HTML, CSS, and JavaScript. It showcases my projects, technical skills, resume, and includes a functional contact form with backend integration.",
+    "image": "https://raw.githubusercontent.com/Vinay99199/mern-portfolio/refs/heads/main/frontend/public/fallback.png",
+    "githubLink": "https://github.com/Vinay99199/mern-portfolio",
+    "liveLink": "https://mern-portfolio-frontend-qaf3.onrender.com"
+  },
+  {
+    "title": "Wanderlust",
+    "description": "A full-stack Airbnb-inspired web application built using MongoDB, Express.js, Node.js, and EJS. Features include user authentication, property listings, image uploads, wishlist, booking system, Razorpay payments, reviews, user profiles, search, and category-based filtering.",
+    "image": "https://raw.githubusercontent.com/Vinay99199/mern-portfolio/refs/heads/main/frontend/public/airbnbimage.png",
+    "githubLink": "https://github.com/Vinay99199/Wanderlust",
+    "liveLink": "https://wanderlust-yie1.onrender.com/listings"
+  },
+  {
+    "title": "URL Shortener",
+    "description": "A MERN stack web application that converts long URLs into short, shareable links with QR code generation and instant redirection.",
+    "image": "https://smythos.com/wp-content/uploads/2024/10/url1-interface.png",
+    "githubLink": "https://github.com/Vinay99199/mern-url-shortener",
+    "liveLink": "https://urlshortener-6bvq.onrender.com"
+}
+]   
