@@ -160,7 +160,7 @@ function Contact() {
 
           <div className="email-address">
             <span>MY EMAIL</span>
-            <strong>{jaiswalvinay539@gmail.com}</strong>
+            <strong>{YOUR_EMAIL}</strong>
           </div>
 
           <a
