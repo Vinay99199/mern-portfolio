@@ -95,8 +95,8 @@ function Home() {
         )}
         </div>
       </section>
+
 {/* Contact Section */}
-      {/* Contact Section */}
 <section className="home-contact">
   <h2>Get In Touch</h2>
 
