@@ -48,22 +48,15 @@ function Contact() {
       }
     } catch (error) {
       setMessage("Error sending message");
-      console.error(error);
-
       setTimeout(() => setMessage(""), 5000);
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const handleEmailClick = () => {
-    window.location.href = `mailto:${YOUR_EMAIL}`;
-  };
-
   return (
     <div className="page-container contact-page">
 
-      {/* Header */}
       <div className="contact-header">
         <span className="contact-badge">GET IN TOUCH</span>
 
@@ -77,7 +70,7 @@ function Contact() {
 
       <div className="contact-wrapper">
 
-        {/* Contact Form */}
+        {/* FORM */}
         <div className="contact-form-card">
 
           <div className="form-title">
@@ -85,11 +78,14 @@ function Contact() {
             <p>I'll get back to you as soon as possible.</p>
           </div>
 
-          <form className="contact-form" onSubmit={handleSubmit}>
+          <form
+            className="contact-page-form"
+            onSubmit={handleSubmit}
+          >
 
             {message && (
               <div
-                className={`message ${
+                className={`contact-page-message ${
                   message.includes("successfully")
                     ? "success"
                     : "error"
@@ -99,12 +95,11 @@ function Contact() {
               </div>
             )}
 
-            <div className="form-group">
-              <label htmlFor="name">Your Name</label>
+            <div className="contact-page-group">
+              <label>Your Name</label>
 
               <input
                 type="text"
-                id="name"
                 name="name"
                 placeholder="Enter your name"
                 value={formData.name}
@@ -113,12 +108,11 @@ function Contact() {
               />
             </div>
 
-            <div className="form-group">
-              <label htmlFor="email">Your Email</label>
+            <div className="contact-page-group">
+              <label>Your Email</label>
 
               <input
                 type="email"
-                id="email"
                 name="email"
                 placeholder="you@example.com"
                 value={formData.email}
@@ -127,42 +121,35 @@ function Contact() {
               />
             </div>
 
-            <div className="form-group">
-              <label htmlFor="message">Your Message</label>
+            <div className="contact-page-group">
+              <label>Your Message</label>
 
               <textarea
-                id="message"
                 name="message"
                 placeholder="Tell me about your project or opportunity..."
                 value={formData.message}
                 onChange={handleInputChange}
                 required
-              ></textarea>
+              />
             </div>
 
             <button
               type="submit"
-              className="submit-btn"
+              className="contact-page-submit-btn"
               disabled={isSubmitting}
             >
-              {isSubmitting ? (
-                "Sending..."
-              ) : (
-                <>
-                  Send Message <span>→</span>
-                </>
-              )}
+              {isSubmitting
+                ? "Sending..."
+                : "Send Message →"}
             </button>
 
           </form>
         </div>
 
-        {/* Direct Email Card */}
+        {/* EMAIL */}
         <div className="direct-email-card">
 
-          <div className="email-icon">
-            ✉
-          </div>
+          <div className="email-icon">✉</div>
 
           <h2>Prefer Email?</h2>
 
@@ -172,18 +159,16 @@ function Contact() {
           </p>
 
           <div className="email-address">
-            <span>My Email</span>
-
+            <span>MY EMAIL</span>
             <strong>{YOUR_EMAIL}</strong>
           </div>
 
-          <button
+          <a
+            href={`mailto:${YOUR_EMAIL}`}
             className="email-btn"
-            onClick={handleEmailClick}
           >
-            Email Me
-            <span>↗</span>
-          </button>
+            Email Me ↗
+          </a>
 
           <p className="email-note">
             Clicking the button will open your default email app.
