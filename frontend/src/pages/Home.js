@@ -96,59 +96,70 @@ function Home() {
         </div>
       </section>
 {/* Contact Section */}
-      <section className="contact">
-        <h2>Get In Touch</h2>
-        <form className="contact-form" onSubmit={handleSubmit}>
-          {contactMessage && (
-            <div
-              className={`message ${
-                contactMessage.includes("successfully") ? "success" : "error"
-              }`}
-            >
-              {contactMessage}
-            </div>
-          )}
+      {/* Contact Section */}
+<section className="home-contact">
+  <h2>Get In Touch</h2>
 
-          <div className="form-group">
-            <label>Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
+  <form className="home-contact-form" onSubmit={handleSubmit}>
+    {contactMessage && (
+      <div
+        className={`home-message ${
+          contactMessage.includes("successfully")
+            ? "success"
+            : "error"
+        }`}
+      >
+        {contactMessage}
+      </div>
+    )}
 
-          <div className="form-group">
-            <label>Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
+    <div className="home-form-group">
+      <label>Name</label>
 
-          <div className="form-group">
-            <label>Message</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleInputChange}
-              required
-            ></textarea>
-          </div>
+      <input
+        type="text"
+        id="home-name"
+        name="name"
+        value={formData.name}
+        onChange={handleInputChange}
+        required
+      />
+    </div>
 
-          <button type="submit" className="submit-btn" disabled={isSubmitting}>
-            {isSubmitting ? "Sending..." : "Send Message"}
-          </button>
-        </form>
-      </section>
+    <div className="home-form-group">
+      <label>Email</label>
+
+      <input
+        type="email"
+        id="home-email"
+        name="email"
+        value={formData.email}
+        onChange={handleInputChange}
+        required
+      />
+    </div>
+
+    <div className="home-form-group">
+      <label>Message</label>
+
+      <textarea
+        id="home-message"
+        name="message"
+        value={formData.message}
+        onChange={handleInputChange}
+        required
+      ></textarea>
+    </div>
+
+    <button
+      type="submit"
+      className="home-submit-btn"
+      disabled={isSubmitting}
+    >
+      {isSubmitting ? "Sending..." : "Send Message"}
+    </button>
+  </form>
+</section>
     </main>
   );
 }
