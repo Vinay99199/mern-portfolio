@@ -312,30 +312,88 @@ nav {
   background: #059669;
 }
 
+
 /* Contact Section */
-.contact {
+.contact-page {
   max-width: 1200px;
-  margin: 3rem auto;
-  padding: 2rem;
-}
-
-.contact h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.contact-form {
-  max-width: 600px;
   margin: 0 auto;
-  background-color: var(--card);
+  padding: 4rem 2rem;
+}
+
+/* Header */
+.contact-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+.contact-badge {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  margin-bottom: 1rem;
+  border-radius: 50px;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.contact-header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.contact-header p {
+  color: var(--text-secondary, #6b7280);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+
+/* Main Wrapper */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+
+/* Form Card */
+.contact-form-card,
+.direct-email-card {
+  background: var(--card);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+.form-title {
+  margin-bottom: 1.8rem;
+}
+
+.form-title h2 {
+  margin-bottom: 0.4rem;
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+.form-title p {
+  margin: 0;
+  color: var(--text-secondary, #6b7280);
+}
+
+
+/* Form */
+.contact-form {
+  width: 100%;
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.3rem;
 }
 
 .form-group label {
@@ -347,13 +405,21 @@ nav {
 
 .form-group input,
 .form-group textarea {
+  box-sizing: border-box;
   width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #D1D5DB;
-  border-radius: 6px;
+  padding: 0.9rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
   font-family: inherit;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #9ca3af;
 }
 
 .form-group input:focus,
@@ -365,54 +431,155 @@ nav {
 
 .form-group textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 140px;
 }
 
+
+/* Submit Button */
 .submit-btn {
   width: 100%;
-  padding: 0.8rem;
-  background-color: var(--primary);
-  color: white;
+  padding: 0.95rem 1rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: white;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
+.submit-btn span {
+  margin-left: 8px;
+  font-size: 1.2rem;
+}
+
 .submit-btn:hover {
-  background-color: var(--dark);
+  background: var(--dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
 }
 
 .submit-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+  transform: none;
 }
 
+
+/* Messages */
 .message {
-  padding: 1rem;
-  border-radius: 6px;
-  margin-bottom: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
   text-align: center;
+  font-weight: 500;
 }
 
 .message.success {
-  background-color: #D1FAE5;
-  color: #065F46;
-  border: 1px solid #6EE7B7;
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #6ee7b7;
 }
 
 .message.error {
-  background-color: #FEE2E2;
-  color: #991B1B;
-  border: 1px solid #FECACA;
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
 }
 
-/* Footer */
 
+/*  DIRECT EMAIL CARD */
+.direct-email-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.email-icon {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+  font-size: 1.8rem;
+}
+
+.direct-email-card h2 {
+  margin-bottom: 0.7rem;
+  color: var(--text);
+}
+
+.direct-email-card > p {
+  color: var(--text-secondary, #6b7280);
+  line-height: 1.6;
+}
+
+
+/* Email Address */
+.email-address {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+  background: rgba(37, 99, 235, 0.06);
+  border: 1px solid rgba(37, 99, 235, 0.12);
+}
+
+.email-address span {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary, #6b7280);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.email-address strong {
+  display: block;
+  color: var(--primary);
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+
+/* Email Button */
+.email-btn {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.email-btn span {
+  margin-left: 8px;
+}
+
+.email-btn:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Note */
+.email-note {
+  margin-top: 1rem !important;
+  font-size: 0.8rem;
+}
+
+
+
+/* Footer */
 footer {
   background: linear-gradient(135deg, var(--dark), #020617);
   color: white;
