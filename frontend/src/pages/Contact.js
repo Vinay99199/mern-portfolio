@@ -6,7 +6,7 @@ function Contact() {
     process.env.REACT_APP_API_URL ||
     "https://mern-portfolio-0idk.onrender.com";
 
-  const YOUR_EMAIL = "vinayjaiswal059@gmail.com";
+  const YOUR_EMAIL = "jaiswalvinay539@gmail.com";
 
   const [formData, setFormData] = useState({
     name: "",
@@ -160,7 +160,7 @@ function Contact() {
 
           <div className="email-address">
             <span>MY EMAIL</span>
-            <strong>{YOUR_EMAIL}</strong>
+            <strong>{jaiswalvinay539@gmail.com}</strong>
           </div>
 
           <a
