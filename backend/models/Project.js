@@ -23,6 +23,7 @@ const projectSchema = new mongoose.Schema(
       required: [true, "Please provide a GitHub link"],
       match: [/^https?:\/\/.+/, "Please provide a valid URL"]
     },
+
     liveLink: {
       type: String,
       required: [true, "Please provide a live demo link"],
