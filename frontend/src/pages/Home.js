@@ -3,9 +3,8 @@ import axios from "axios";
 import Hero from "../components/Hero";
 import ProjectCard from "../components/ProjectCard";
 
+const API = process.env.REACT_APP_API_URL || "https://mern-portfolio-0idk.onrender.com";
 function Home() {
-  const API = process.env.REACT_APP_API_URL || "https://mern-portfolio-0idk.onrender.com";
-
   const [projects, setProjects] = useState([]);
   const [contactMessage, setContactMessage] = useState("");
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -25,17 +24,17 @@ function Home() {
   ];
 
   useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await axios.get(`${API}/api/projects`);
+        setProjects(response.data.data.slice(0, 2));
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      }
+    };
+
     fetchProjects();
   }, []);
-
-  const fetchProjects = async () => {
-    try {
-      const response = await axios.get(`${API}/api/projects`);
-      setProjects(response.data.data.slice(0, 2));
-    } catch (error) {
-      console.error("Error fetching projects:", error);
-    }
-  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
