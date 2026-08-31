@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function About() {
   return (
@@ -284,9 +285,9 @@ function About() {
           </p>
         </div>
 
-        <a href="/contact" className="about-contact-btn">
+        <Link to="/contact" className="about-contact-btn">
           Let's Connect →
-        </a>
+        </Link>
       </section>
     </div>
   );

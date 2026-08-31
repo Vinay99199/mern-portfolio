@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Resume() {
   return (
@@ -135,9 +136,9 @@ function Resume() {
           </h2>
         </div>
 
-        <a href="/contact" className="resume-contact-btn">
+        <Link to="/contact" className="resume-contact-btn">
           Contact Me →
-        </a>
+        </Link>
       </section>
     </main>
   );
