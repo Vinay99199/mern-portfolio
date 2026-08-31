@@ -13,7 +13,7 @@ connectDB();
 const corsOptions = {
   origin: [
     "http://localhost:3000",
-    "https://portfolio-gywg.onrender.com/"
+    "https://portfolio-gywg.onrender.com"
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
