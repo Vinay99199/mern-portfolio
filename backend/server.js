@@ -13,7 +13,7 @@ connectDB();
 const corsOptions = {
   origin: [
     "http://localhost:3000",
-    "https://mern-portfolio-frontend-qaf3.onrender.com"
+    "https://portfolio-gywg.onrender.com/"
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
