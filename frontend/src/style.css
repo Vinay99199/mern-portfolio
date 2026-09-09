@@ -429,6 +429,7 @@ nav {
   font-weight: 800;
 }
 
+
 /* Projects Section */
 .projects-section {
   max-width: 1160px;
@@ -562,6 +563,10 @@ nav {
 .projects-section .text-link {
   color: #cbd5e1 !important;
   text-decoration: none !important;
+}
+
+.projects-section .section-heading-row {
+  margin-bottom: 20px;
 }
 
 .projects-section .text-link:hover {
