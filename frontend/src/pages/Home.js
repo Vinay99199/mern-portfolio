@@ -36,8 +36,6 @@ function Home() {
       try {
         const response = await axios.get(`${API}/api/projects`);
 
-        console.log("Projects API:", response.data);
-
         setProjects(response.data.data?.slice(0, 2) || []);
       } catch (error) {
         console.error("Projects API Error:", error);
