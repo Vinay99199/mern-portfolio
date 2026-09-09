@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import hero from "../assets/vinayimage.jpeg";
+import hero from "../assets/vinayimage.png";
 
 const words = [
   "Aspiring Full Stack Developer",

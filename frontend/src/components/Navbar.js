@@ -17,7 +17,7 @@ function Navbar() {
     <nav>
       <div className="navbar">
         <Link to="/" className="logo">
-          Vinay.dev
+          Vinay<span>.dev</span>
         </Link>
 
         <ul className="nav-links">

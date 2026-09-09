@@ -7,37 +7,55 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
 
-        <h3 className="footer-logo">Vinay.dev</h3>
+        <div className="footer-main">
 
-        <p className="footer-tagline">
-          Full Stack Developer specializing in MERN stack applications.
-        </p>
+          <div className="footer-brand">
+            <h3 className="footer-logo">
+              Vinay<span>.dev</span>
+            </h3>
 
-        <div className="footer-links">
-          <a
-            href="https://github.com/Vinay99199"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
+            <p className="footer-tagline">
+              Full Stack Developer building practical and user-focused
+              web applications with the MERN stack.
+            </p>
 
-          <a
-            href="https://linkedin.com/in/vinay-jaiswal-1b470b297"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
+            <p className="footer-copy">
+              © {currentYear} Vinay Jaiswal. All rights reserved.
+            </p>
+          </div>
 
-          <a href="mailto:jaiswalvinay539@gmail.com">
-            Email
-          </a>
+          <div className="footer-connect">
+            <span className="footer-label">CONNECT</span>
+
+            <div className="footer-links">
+              <a
+                href="https://github.com/Vinay99199"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub <span>↗</span>
+              </a>
+
+              <a
+                href="https://linkedin.com/in/vinay-jaiswal-1b470b297"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn <span>↗</span>
+              </a>
+
+              <a href="mailto:jaiswalvinay539@gmail.com">
+                Email <span>↗</span>
+              </a>
+            </div>
+
+            <p className="footer-status">
+              <span></span>
+              Available for opportunities
+            </p>
+          </div>
+
         </div>
-
-        <p className="footer-copy">
-          © {currentYear} Vinay. All rights reserved.
-        </p>
 
       </div>
     </footer>

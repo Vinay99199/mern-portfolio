@@ -37,35 +37,6 @@ function Resume() {
             </a>
           </div>
         </div>
-
-        <div className="resume-preview-card">
-          <div className="resume-paper">
-            <div className="paper-header">
-              <div className="paper-avatar">VJ</div>
-
-              <div>
-                <h3>Vinay Jaiswal</h3>
-                <p>Full Stack Developer</p>
-              </div>
-            </div>
-
-            <div className="paper-line large"></div>
-            <div className="paper-line"></div>
-            <div className="paper-line"></div>
-
-            <div className="paper-section">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-
-            <div className="paper-section">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-        </div>
       </section>
 
       <section className="resume-info">
