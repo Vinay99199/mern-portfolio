@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ProjectCard from "../components/ProjectCard";
 
-const API = process.env.REACT_APP_API_URL || "https://mern-portfolio-0idk.onrender.com";
+const API = import.meta.env.VITE_API_BASE_URL || "https://mern-portfolio-yow3.onrender.com";
 
 function Projects() {
 

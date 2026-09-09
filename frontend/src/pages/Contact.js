@@ -3,8 +3,8 @@ import axios from "axios";
 
 function Contact() {
   const API =
-    process.env.REACT_APP_API_URL ||
-    "https://mern-portfolio-0idk.onrender.com";
+    import.meta.env.VITE_API_BASE_URL ||
+    "https://mern-portfolio-yow3.onrender.com";
 
   const YOUR_EMAIL = "jaiswalvinay539@gmail.com";
 

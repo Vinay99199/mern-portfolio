@@ -6,7 +6,7 @@ import ProjectCard from "../components/ProjectCard";
 
 const API =
   import.meta.env.VITE_API_BASE_URL ||
-  "https://mern-portfolio-0idk.onrender.com";
+  "https://mern-portfolio-yow3.onrender.com";
 
 function Home() {
   const [projects, setProjects] = useState([]);
