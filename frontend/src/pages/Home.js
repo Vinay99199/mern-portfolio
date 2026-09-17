@@ -34,9 +34,9 @@ function Home() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get(`${API}/api/projects`);
+        const response = await axios.get(`${API}/api/projects/featured`);
 
-        setProjects(response.data.data?.slice(0, 2) || []);
+        setProjects(response.data.data || []);
       } catch (error) {
         console.error("Projects API Error:", error);
       }

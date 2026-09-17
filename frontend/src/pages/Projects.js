@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ProjectCard from "../components/ProjectCard";
 
-const API = import.meta.env.VITE_API_BASE_URL || "https://mern-portfolio-yow3.onrender.com";
+const API =
+  import.meta.env.VITE_API_BASE_URL ||
+  "https://mern-portfolio-yow3.onrender.com";
 
 function Projects() {
-
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -13,7 +14,22 @@ function Projects() {
     const fetchProjects = async () => {
       try {
         const response = await axios.get(`${API}/api/projects`);
-        setProjects(response.data.data);
+
+        const projectsData = response.data.data || [];
+
+        // Fixed project order
+        const order = {
+          "Wanderlust": 1,
+          "InterviewAI – AI-Powered Job Preparation Platform": 2,
+          "URL Shortener": 3,
+          "Full Stack Portfolio Website": 4
+        };
+
+        const sortedProjects = [...projectsData].sort((a, b) => {
+          return (order[a.title] || 999) - (order[b.title] || 999);
+        });
+
+        setProjects(sortedProjects);
       } catch (error) {
         console.error("Error fetching projects:", error);
       } finally {
@@ -33,7 +49,10 @@ function Projects() {
       ) : projects.length > 0 ? (
         <div className="projects-grid">
           {projects.map((project) => (
-            <ProjectCard key={project._id} project={project} />
+            <ProjectCard
+              key={project._id}
+              project={project}
+            />
           ))}
         </div>
       ) : (

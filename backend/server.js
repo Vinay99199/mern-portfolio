@@ -32,7 +32,7 @@ app.use("/api/contact", contactRoutes);
 app.get("/", (req, res) => {
   res.json({
     success: true,
-    message: "Portfolio API is running 🚀",
+    message: "Portfolio API is running ",
     endpoints: {
       projects: "/api/projects",
       contact: "/api/contact"

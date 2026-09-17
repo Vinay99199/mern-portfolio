@@ -3,7 +3,7 @@ const Project = require("../models/Project");
 // Get all projects
 exports.getAllProjects = async (req, res) => {
   try {
-    const projects = await Project.find().sort({ createdAt: -1 });
+    const projects = await Project.find().sort({ displayOrder: 1 });
 
     res.status(200).json({
       success: true,
@@ -21,8 +21,6 @@ exports.getAllProjects = async (req, res) => {
 };
 
 // Get featured projects
-// Only projects with featured: true will be returned.
-// featuredOrder decides their display order.
 exports.getFeaturedProjects = async (req, res) => {
   try {
     const projects = await Project.find({ featured: true })
@@ -44,7 +42,7 @@ exports.getFeaturedProjects = async (req, res) => {
   }
 };
 
-// Get single project by ID
+// Get project by ID
 exports.getProjectById = async (req, res) => {
   try {
     const project = await Project.findById(req.params.id);

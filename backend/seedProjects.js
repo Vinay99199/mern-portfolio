@@ -8,27 +8,29 @@ async function seedProjects() {
     console.log("Connecting to MongoDB...");
 
     await mongoose.connect(process.env.MONGO_URI);
+
     console.log("Connected to MongoDB");
 
-    const existing = await Project.countDocuments();
-    console.log("Existing projects:", existing);
+    // Remove all existing projects
+    await Project.deleteMany({});
 
-    if (process.env.NODE_ENV === "development") {
-      await Project.deleteMany({});
-      console.log("Old projects deleted");
-    }
+    console.log("Old projects deleted");
 
+    // Insert projects from projects.json
     const result = await Project.insertMany(projects);
-    console.log("Inserted projects:", result.length);
-    console.log("Seeding completed");
+
+    console.log(`Inserted ${result.length} projects`);
+
+    console.log("Projects seeded successfully");
 
     await mongoose.connection.close();
 
     process.exit(0);
   } catch (error) {
-    console.error("Error:", error.message);
+    console.error("Seeding error:", error.message);
 
     await mongoose.connection.close();
+
     process.exit(1);
   }
 }

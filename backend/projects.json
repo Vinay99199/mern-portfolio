@@ -6,7 +6,8 @@
     "githubLink": "https://github.com/Vinay99199/Wanderlust",
     "liveLink": "https://wanderlust-yie1.onrender.com/listings",
     "featured": true,
-    "featuredOrder": 1
+    "featuredOrder": 1,
+    "displayOrder": 1
   },
   {
     "title": "InterviewAI – AI-Powered Job Preparation Platform",
@@ -15,7 +16,8 @@
     "githubLink": "https://github.com/Vinay99199/prep-pilot-ai",
     "liveLink": "https://prep-pilot-ai-mu.vercel.app",
     "featured": true,
-    "featuredOrder": 2
+    "featuredOrder": 2,
+    "displayOrder": 2
   },
   {
     "title": "URL Shortener",
@@ -24,7 +26,8 @@
     "githubLink": "https://github.com/Vinay99199/mern-url-shortener",
     "liveLink": "https://url-d6s3.onrender.com",
     "featured": false,
-    "featuredOrder": 999
+    "featuredOrder": 999,
+    "displayOrder": 3
   },
   {
     "title": "Full Stack Portfolio Website",
@@ -33,6 +36,7 @@
     "githubLink": "https://github.com/Vinay99199/mern-portfolio",
     "liveLink": "https://portfolio-gywg.onrender.com",
     "featured": false,
-    "featuredOrder": 999
+    "featuredOrder": 999,
+    "displayOrder": 4
   }
 ]

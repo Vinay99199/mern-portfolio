@@ -19,8 +19,7 @@ const projectSchema = new mongoose.Schema(
     image: {
       type: String,
       required: [true, "Please provide an image URL"],
-      match: [/^https?:\/\/.+/, "Please provide a valid image URL"]
-    },
+      match: [/^https?:\/\/.+/, "Please provide a valid image URL"]    },
 
     githubLink: {
       type: String,
@@ -30,8 +29,8 @@ const projectSchema = new mongoose.Schema(
 
     liveLink: {
       type: String,
-      required: [true, "Please provide a live demo link"],
-      match: [/^https?:\/\/.+/, "Please provide a valid live demo URL"]
+      default: "",
+     match: [/^$|^https?:\/\/.+/, "Please provide a valid live demo URL"]
     },
 
     featured: {
@@ -40,6 +39,11 @@ const projectSchema = new mongoose.Schema(
     },
 
     featuredOrder: {
+      type: Number,
+      default: 999
+    },
+
+    displayOrder: {
       type: Number,
       default: 999
     }
