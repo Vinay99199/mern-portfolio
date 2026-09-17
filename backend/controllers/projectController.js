@@ -1,5 +1,6 @@
 const Project = require("../models/Project");
 
+// Get all projects
 exports.getAllProjects = async (req, res) => {
   try {
     const projects = await Project.find().sort({ createdAt: -1 });
@@ -10,6 +11,8 @@ exports.getAllProjects = async (req, res) => {
       data: projects
     });
   } catch (error) {
+    console.error("Error fetching projects:", error);
+
     res.status(500).json({
       success: false,
       message: "Error fetching projects"
@@ -17,11 +20,14 @@ exports.getAllProjects = async (req, res) => {
   }
 };
 
+// Get featured projects
+// Only projects with featured: true will be returned.
+// featuredOrder decides their display order.
 exports.getFeaturedProjects = async (req, res) => {
   try {
     const projects = await Project.find({ featured: true })
-      .limit(2)
-      .sort({ createdAt: -1 });
+      .sort({ featuredOrder: 1 })
+      .limit(2);
 
     res.status(200).json({
       success: true,
@@ -29,6 +35,8 @@ exports.getFeaturedProjects = async (req, res) => {
       data: projects
     });
   } catch (error) {
+    console.error("Error fetching featured projects:", error);
+
     res.status(500).json({
       success: false,
       message: "Error fetching featured projects"
@@ -36,6 +44,7 @@ exports.getFeaturedProjects = async (req, res) => {
   }
 };
 
+// Get single project by ID
 exports.getProjectById = async (req, res) => {
   try {
     const project = await Project.findById(req.params.id);
@@ -52,6 +61,8 @@ exports.getProjectById = async (req, res) => {
       data: project
     });
   } catch (error) {
+    console.error("Error fetching project:", error);
+
     res.status(500).json({
       success: false,
       message: "Error fetching project"

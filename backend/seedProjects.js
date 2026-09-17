@@ -6,8 +6,9 @@ require("dotenv").config();
 async function seedProjects() {
   try {
     console.log("Connecting to MongoDB...");
+
     await mongoose.connect(process.env.MONGO_URI);
-    console.log("Connected");
+    console.log("Connected to MongoDB");
 
     const existing = await Project.countDocuments();
     console.log("Existing projects:", existing);
@@ -18,12 +19,16 @@ async function seedProjects() {
     }
 
     const result = await Project.insertMany(projects);
-    console.log("Inserted:", result.length);
-
+    console.log("Inserted projects:", result.length);
     console.log("Seeding completed");
+
+    await mongoose.connection.close();
+
     process.exit(0);
   } catch (error) {
     console.error("Error:", error.message);
+
+    await mongoose.connection.close();
     process.exit(1);
   }
 }

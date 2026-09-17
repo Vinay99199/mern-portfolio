@@ -1,23 +1,38 @@
-[  
+[
   {
     "title": "Wanderlust",
     "description": "A full-stack Airbnb-inspired web application built using MongoDB, Express.js, Node.js, and EJS. Features include user authentication, property listings, image uploads, wishlist, booking system, Razorpay payments, reviews, user profiles, search, and category-based filtering.",
     "image": "https://raw.githubusercontent.com/Vinay99199/mern-portfolio/refs/heads/main/frontend/public/airbnbimage.png",
     "githubLink": "https://github.com/Vinay99199/Wanderlust",
-    "liveLink": "https://wanderlust-yie1.onrender.com/listings"
+    "liveLink": "https://wanderlust-yie1.onrender.com/listings",
+    "featured": true,
+    "featuredOrder": 1
+  },
+  {
+    "title": "InterviewAI – AI-Powered Job Preparation Platform",
+    "description": "A full-stack AI-powered job preparation platform built with React.js, Node.js, Express.js, MongoDB, JWT, Gemini AI, and Puppeteer. It helps students prepare for interviews through resume processing, job description analysis, skill-gap identification, AI-generated interview questions, preparation reports, and ATS-oriented resume generation.",
+    "image": "https://res.cloudinary.com/dqbzv0bgw/image/upload/v1789631415/wanderlust_DEV/u7owzyyljyotndrxokzf.png",
+    "githubLink": "https://github.com/Vinay99199/prep-pilot-ai",
+    "liveLink": "https://prep-pilot-ai-mu.vercel.app",
+    "featured": true,
+    "featuredOrder": 2
   },
   {
     "title": "URL Shortener",
     "description": "A MERN stack web application that converts long URLs into short, shareable links with QR code generation and instant redirection.",
     "image": "https://smythos.com/wp-content/uploads/2024/10/url1-interface.png",
     "githubLink": "https://github.com/Vinay99199/mern-url-shortener",
-    "liveLink": "https://url-d6s3.onrender.com"
+    "liveLink": "https://url-d6s3.onrender.com",
+    "featured": false,
+    "featuredOrder": 999
   },
   {
     "title": "Full Stack Portfolio Website",
     "description": "A full-stack portfolio website built using Node.js, Express.js, MongoDB, HTML, CSS, and JavaScript. It showcases my projects, technical skills, resume, and includes a functional contact form with backend integration.",
     "image": "https://raw.githubusercontent.com/Vinay99199/mern-portfolio/refs/heads/main/frontend/public/fallback.png",
     "githubLink": "https://github.com/Vinay99199/mern-portfolio",
-    "liveLink": "https://portfolio-gywg.onrender.com"
+    "liveLink": "https://portfolio-gywg.onrender.com",
+    "featured": false,
+    "featuredOrder": 999
   }
-]   
+]
