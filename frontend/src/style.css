@@ -191,7 +191,7 @@ nav {
   max-width: 720px;
   margin-bottom: 18px;
   color: #f8fafc;
-  font-size: clamp(3.25rem, 6vw, 5.4rem);
+  font-size: clamp(3.25rem, 6vw, 5rem);
   line-height: 0.98;
   letter-spacing: -0.065em;
   font-weight: 800;
@@ -247,20 +247,86 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  min-height: 390px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease-out;
+}
+
+/* Outer premium ring */
+.hero-image::before {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border: 1px solid rgba(45, 212, 191, 0.22);
+  border-radius: 50%;
+  animation: heroRingRotate 14s linear infinite;
+  pointer-events: none;
+}
+
+/* Inner ring */
+.hero-image::after {
+  content: "";
+  position: absolute;
+  width: 356px;
+  height: 356px;
+  border: 1px dashed rgba(45, 212, 191, 0.16);
+  border-radius: 50%;
+  animation: heroRingRotateReverse 12s linear infinite;
+  pointer-events: none;
 }
 
 .hero-image img {
   position: relative;
-  z-index: 1;
-  width: 350px;
-  max-width: 100%;
-  border: 1px solid #1d283b;
-  border-radius: 24px;
-  height: auto;
-  display: block;
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+
+  width: min(100%, 340px);
+  max-width: 340px;
+  aspect-ratio: 1;
+  object-fit: cover;
+
+  border: 1px solid rgba(45, 212, 191, 0.55);
+  border-radius: 50%;
+
+  background: #111827;
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.38),
+    0 0 25px rgba(45, 212, 191, 0.08);
+
+  /* Important: image ko transform/blur nahi karna */
+  transform: none;
+  filter: none;
+
+  transition: box-shadow 0.3s ease;
 }
 
+.hero-image:hover img {
+  box-shadow:
+    0 32px 65px rgba(0, 0, 0, 0.45),
+    0 0 32px rgba(45, 212, 191, 0.12);
+}
+@keyframes heroRingRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes heroRingRotateReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
 
 
 /* Home introduction */
@@ -370,6 +436,7 @@ nav {
   transform: translateY(-3px);
 }
 
+
 /* Skills Section */
 .skills {
   max-width: 1160px;
@@ -474,11 +541,17 @@ nav {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 32px;
+  align-items: stretch;
+}
+
+.page-container .projects-grid > * {
+  height: 100%;
 }
 
 /* Project cards */
 .project-card {
   min-width: 0;
+  height: 100%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1786,6 +1859,8 @@ nav {
   background: #2dd4bf;
 }
 
+
+
 /* Responsive */
 @media (max-width: 1000px) {
   .about-page {
@@ -1926,10 +2001,24 @@ nav {
     justify-content: center;
   }
 
-  .hero-image img {
-    max-width: 320px;
-    border-radius: 20px;
-  }
+  .hero-image {
+  min-height: 350px;
+}
+
+.hero-image::before {
+  width: 330px;
+  height: 330px;
+}
+
+.hero-image::after {
+  width: 300px;
+  height: 300px;
+}
+
+.hero-image img {
+  max-width: 300px;
+  border-radius: 50%;
+}
 
   .skills,
   .projects-section,
@@ -2181,9 +2270,8 @@ nav {
 }
 
 
-
+/* Effects Start */
 /* Custom Cursor */
-
 .custom-cursor-dot,
 .custom-cursor-ring {
   position: fixed;
@@ -2278,7 +2366,6 @@ nav {
 
 
 /* Keep card content above the glow */
-
 .skill-card > *,
 .project-card > *,
 .resume-info-card > *,
@@ -2290,9 +2377,7 @@ nav {
   z-index: 1;
 }
 
-
 /* Disable custom cursor on touch devices */
-
 @media (hover: none), (pointer: coarse) {
   .custom-cursor-dot,
   .custom-cursor-ring {
@@ -2300,12 +2385,91 @@ nav {
   }
 }
 
-
 /* Respect reduced motion */
-
 @media (prefers-reduced-motion: reduce) {
   .custom-cursor-dot,
   .custom-cursor-ring {
     display: none;
+  }
+}
+
+
+/* Cursor Spotlight */
+.skill-card,
+.project-card,
+.resume-info-card,
+.work-card,
+.tech-item,
+.focus-card,
+.journey-highlights > div {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before,
+.project-card::before,
+.resume-info-card::before,
+.work-card::before,
+.tech-item::before,
+.focus-card::before,
+.journey-highlights > div::before {
+  content: "";
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  left: var(--mouse-x, -100px);
+  top: var(--mouse-y, -100px);
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(45, 212, 191, 0.16) 0%,
+    rgba(45, 212, 191, 0.08) 25%,
+    rgba(45, 212, 191, 0.03) 50%,
+    transparent 72%
+  );
+
+  pointer-events: none;
+  opacity: 0;
+
+  transition: opacity 0.25s ease;
+}
+
+.skill-card:hover::before,
+.project-card:hover::before,
+.resume-info-card:hover::before,
+.work-card:hover::before,
+.tech-item:hover::before,
+.focus-card:hover::before,
+.journey-highlights > div:hover::before {
+  opacity: 1;
+}
+
+
+
+/* Scroll Reveal */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.scroll-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

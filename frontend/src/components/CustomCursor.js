@@ -16,26 +16,54 @@ function CustomCursor() {
     let ringY = 0;
     let animationFrame;
 
-      const moveCursor = (e) => {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
+    const interactiveSelector = `
+      a,
+      button,
+      .skill-card,
+      .project-card,
+      .resume-info-card,
+      .work-card,
+      .tech-item,
+      .focus-card,
+      .journey-highlights > div
+    `;
 
-          dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+    const moveCursor = (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
 
-          const hoveredCard = e.target.closest(
-              ".skill-card, .project-card, .resume-info-card, .work-card, .tech-item, .focus-card, .journey-highlights > div"
-          );
+      dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
 
-          if (hoveredCard) {
-              const rect = hoveredCard.getBoundingClientRect();
+      const card = e.target.closest(
+        ".skill-card, .project-card, .resume-info-card, .work-card, .tech-item, .focus-card, .journey-highlights > div"
+      );
 
-              const x = e.clientX - rect.left;
-              const y = e.clientY - rect.top;
+      if (card) {
+        const rect = card.getBoundingClientRect();
 
-              hoveredCard.style.setProperty("--mouse-x", `${x}px`);
-              hoveredCard.style.setProperty("--mouse-y", `${y}px`);
-          }
-      };
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+      }
+    };
+
+    const handleMouseOver = (e) => {
+      const interactive = e.target.closest(interactiveSelector);
+
+      if (interactive) {
+        ring.classList.add("cursor-hover");
+      }
+    };
+
+    const handleMouseOut = (e) => {
+      const interactive = e.target.closest(interactiveSelector);
+
+      if (interactive) {
+        ring.classList.remove("cursor-hover");
+      }
+    };
 
     const animate = () => {
       ringX += (mouseX - ringX) * 0.15;
@@ -44,26 +72,6 @@ function CustomCursor() {
       ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
 
       animationFrame = requestAnimationFrame(animate);
-    };
-
-    const handleMouseOver = (e) => {
-      const target = e.target.closest(
-        "a, button, .skill-card, .project-card, .resume-info-card, .work-card, .tech-item, .focus-card, .journey-highlights > div"
-      );
-
-      if (target) {
-        ring.classList.add("cursor-hover");
-      }
-    };
-
-    const handleMouseOut = (e) => {
-      const target = e.target.closest(
-        "a, button, .skill-card, .project-card, .resume-info-card, .work-card, .tech-item, .focus-card, .journey-highlights > div"
-      );
-
-      if (target) {
-        ring.classList.remove("cursor-hover");
-      }
     };
 
     window.addEventListener("mousemove", moveCursor);
@@ -82,8 +90,8 @@ function CustomCursor() {
 
   return (
     <>
-      <div className="custom-cursor-dot" ref={dotRef}></div>
-      <div className="custom-cursor-ring" ref={ringRef}></div>
+      <div ref={dotRef} className="custom-cursor-dot"></div>
+      <div ref={ringRef} className="custom-cursor-ring"></div>
     </>
   );
 }

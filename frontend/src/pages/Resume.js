@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ScrollReveal from "../components/ScrollReveal";
 
 function Resume() {
   return (
     <main className="resume-page">
+
+      {/* Hero */}
       <section className="resume-hero">
         <div>
           <span className="resume-badge">MY RESUME</span>
@@ -39,78 +42,88 @@ function Resume() {
         </div>
       </section>
 
-      <section className="resume-info">
-        <div className="resume-section-heading">
-          <span>PROFILE</span>
-          <h2>Developer at a glance.</h2>
-        </div>
-
-        <div className="resume-info-grid">
-          <div className="resume-info-card">
-            <span>01</span>
-            <h3>Education</h3>
-            <p>
-              B.Tech in Computer Science from Kanpur Institute of Technology,
-              expected graduation in 2027.
-            </p>
+      {/* Profile */}
+      <ScrollReveal>
+        <section className="resume-info">
+          <div className="resume-section-heading">
+            <span>PROFILE</span>
+            <h2>Developer at a glance.</h2>
           </div>
 
-          <div className="resume-info-card">
-            <span>02</span>
-            <h3>Full Stack Development</h3>
-            <p>
-              Experience building responsive frontend applications and
-              backend APIs using the MERN stack.
-            </p>
+          <div className="resume-info-grid">
+            <div className="resume-info-card">
+              <span>01</span>
+              <h3>Education</h3>
+              <p>
+                B.Tech in Computer Science from Kanpur Institute of Technology,
+                expected graduation in 2027.
+              </p>
+            </div>
+
+            <div className="resume-info-card">
+              <span>02</span>
+              <h3>Full Stack Development</h3>
+              <p>
+                Experience building responsive frontend applications and
+                backend APIs using the MERN stack.
+              </p>
+            </div>
+
+            <div className="resume-info-card">
+              <span>03</span>
+              <h3>Problem Solving</h3>
+              <p>
+                Currently strengthening Java, Data Structures and Algorithms
+                for technical interviews.
+              </p>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* Skills */}
+      <ScrollReveal>
+        <section className="resume-skills">
+          <div className="resume-section-heading">
+            <span>TECHNICAL SKILLS</span>
+            <h2>Tools and technologies.</h2>
           </div>
 
-          <div className="resume-info-card">
-            <span>03</span>
-            <h3>Problem Solving</h3>
-            <p>
-              Currently strengthening Java, Data Structures and Algorithms
-              for technical interviews.
-            </p>
+          <div className="resume-skill-list">
+            <span>React.js</span>
+            <span>JavaScript</span>
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>Node.js</span>
+            <span>Express.js</span>
+            <span>MongoDB</span>
+            <span>MySQL</span>
+            <span>REST APIs</span>
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>Java</span>
+            <span>Data Structures & Algorithms</span>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
-      <section className="resume-skills">
-        <div className="resume-section-heading">
-          <span>TECHNICAL SKILLS</span>
-          <h2>Tools and technologies.</h2>
-        </div>
+      {/* CTA */}
+      <ScrollReveal>
+        <section className="resume-cta">
+          <div>
+            <span>READY TO CONNECT?</span>
 
-        <div className="resume-skill-list">
-          <span>React.js</span>
-          <span>JavaScript</span>
-          <span>HTML5</span>
-          <span>CSS3</span>
-          <span>Node.js</span>
-          <span>Express.js</span>
-          <span>MongoDB</span>
-          <span>MySQL</span>
-          <span>REST APIs</span>
-          <span>Git</span>
-          <span>GitHub</span>
-          <span>Java</span>
-          <span>Data Structures & Algorithms</span>
-        </div>
-      </section>
+            <h2>
+              Interested in working together or discussing an opportunity?
+            </h2>
+          </div>
 
-      <section className="resume-cta">
-        <div>
-          <span>READY TO CONNECT?</span>
+          <Link to="/contact" className="resume-contact-btn">
+            Contact Me →
+          </Link>
+        </section>
+      </ScrollReveal>
 
-          <h2>
-            Interested in working together or discussing an opportunity?
-          </h2>
-        </div>
-
-        <Link to="/contact" className="resume-contact-btn">
-          Contact Me →
-        </Link>
-      </section>
     </main>
   );
 }

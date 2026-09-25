@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ProjectCard from "../components/ProjectCard";
+import ScrollReveal from "../components/ScrollReveal";
 
 const API =
   import.meta.env.VITE_API_BASE_URL ||
@@ -19,10 +20,10 @@ function Projects() {
 
         // Fixed project order
         const order = {
-          "Wanderlust": 1,
+          Wanderlust: 1,
           "InterviewAI – AI-Powered Job Preparation Platform": 2,
           "URL Shortener": 3,
-          "Full Stack Portfolio Website": 4
+          "Full Stack Portfolio Website": 4,
         };
 
         const sortedProjects = [...projectsData].sort((a, b) => {
@@ -42,22 +43,25 @@ function Projects() {
 
   return (
     <div className="page-container">
-      <h1>My Projects</h1>
+
+      <ScrollReveal>
+        <h1>My Projects</h1>
+      </ScrollReveal>
 
       {loading ? (
         <p>Loading projects...</p>
       ) : projects.length > 0 ? (
         <div className="projects-grid">
           {projects.map((project) => (
-            <ProjectCard
-              key={project._id}
-              project={project}
-            />
+            <ScrollReveal key={project._id}>
+              <ProjectCard project={project} />
+            </ScrollReveal>
           ))}
         </div>
       ) : (
         <p>No projects found</p>
       )}
+
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import ScrollReveal from "../components/ScrollReveal";
 
 function Contact() {
   const API =
@@ -38,6 +39,7 @@ function Contact() {
 
       if (response.data.success) {
         setMessage("Message sent successfully!");
+
         setFormData({
           name: "",
           email: "",
@@ -57,124 +59,130 @@ function Contact() {
   return (
     <div className="page-container contact-page">
 
-      <div className="contact-header">
-        <span className="contact-badge">GET IN TOUCH</span>
+      <ScrollReveal>
+        <div className="contact-header">
+          <span className="contact-badge">GET IN TOUCH</span>
 
-        <h1>Let's Work Together</h1>
+          <h1>Let's Work Together</h1>
 
-        <p>
-          Have a project, opportunity, or just want to say hello?
-          Feel free to reach out. I'd love to hear from you.
-        </p>
-      </div>
+          <p>
+            Have a project, opportunity, or just want to say hello?
+            Feel free to reach out. I'd love to hear from you.
+          </p>
+        </div>
+      </ScrollReveal>
 
       <div className="contact-wrapper">
 
         {/* FORM */}
-        <div className="contact-form-card">
+        <ScrollReveal>
+          <div className="contact-form-card">
 
-          <div className="form-title">
-            <h2>Send Me a Message</h2>
-            <p>I'll get back to you as soon as possible.</p>
-          </div>
-
-          <form
-            className="contact-page-form"
-            onSubmit={handleSubmit}
-          >
-
-            {message && (
-              <div
-                className={`contact-page-message ${
-                  message.includes("successfully")
-                    ? "success"
-                    : "error"
-                }`}
-              >
-                {message}
-              </div>
-            )}
-
-            <div className="contact-page-group">
-              <label>Your Name</label>
-
-              <input
-                type="text"
-                name="name"
-                placeholder="Enter your name"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-              />
+            <div className="form-title">
+              <h2>Send Me a Message</h2>
+              <p>I'll get back to you as soon as possible.</p>
             </div>
 
-            <div className="contact-page-group">
-              <label>Your Email</label>
-
-              <input
-                type="email"
-                name="email"
-                placeholder="you@example.com"
-                value={formData.email}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-
-            <div className="contact-page-group">
-              <label>Your Message</label>
-
-              <textarea
-                name="message"
-                placeholder="Tell me about your project or opportunity..."
-                value={formData.message}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="contact-page-submit-btn"
-              disabled={isSubmitting}
+            <form
+              className="contact-page-form"
+              onSubmit={handleSubmit}
             >
-              {isSubmitting
-                ? "Sending..."
-                : "Send Message →"}
-            </button>
 
-          </form>
-        </div>
+              {message && (
+                <div
+                  className={`contact-page-message ${
+                    message.includes("successfully")
+                      ? "success"
+                      : "error"
+                  }`}
+                >
+                  {message}
+                </div>
+              )}
+
+              <div className="contact-page-group">
+                <label>Your Name</label>
+
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+
+              <div className="contact-page-group">
+                <label>Your Email</label>
+
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+
+              <div className="contact-page-group">
+                <label>Your Message</label>
+
+                <textarea
+                  name="message"
+                  placeholder="Tell me about your project or opportunity..."
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="contact-page-submit-btn"
+                disabled={isSubmitting}
+              >
+                {isSubmitting
+                  ? "Sending..."
+                  : "Send Message →"}
+              </button>
+
+            </form>
+          </div>
+        </ScrollReveal>
 
         {/* EMAIL */}
-        <div className="direct-email-card">
+        <ScrollReveal>
+          <div className="direct-email-card">
 
-          <div className="email-icon">✉</div>
+            <div className="email-icon">✉</div>
 
-          <h2>Prefer Email?</h2>
+            <h2>Prefer Email?</h2>
 
-          <p>
-            You can also contact me directly through your
-            preferred email application.
-          </p>
+            <p>
+              You can also contact me directly through your
+              preferred email application.
+            </p>
 
-          <div className="email-address">
-            <span>MY EMAIL</span>
-            <strong>{YOUR_EMAIL}</strong>
+            <div className="email-address">
+              <span>MY EMAIL</span>
+              <strong>{YOUR_EMAIL}</strong>
+            </div>
+
+            <a
+              href={`mailto:${YOUR_EMAIL}`}
+              className="email-btn"
+            >
+              Email Me ↗
+            </a>
+
+            <p className="email-note">
+              Clicking the button will open your default email app.
+            </p>
+
           </div>
-
-          <a
-            href={`mailto:${YOUR_EMAIL}`}
-            className="email-btn"
-          >
-            Email Me ↗
-          </a>
-
-          <p className="email-note">
-            Clicking the button will open your default email app.
-          </p>
-
-        </div>
+        </ScrollReveal>
 
       </div>
     </div>
