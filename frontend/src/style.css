@@ -2179,3 +2179,133 @@ nav {
     animation-duration: 0.01ms !important;
   }
 }
+
+
+
+/* Custom Cursor */
+
+.custom-cursor-dot,
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  transform: translate3d(-100px, -100px, 0);
+}
+
+.custom-cursor-dot {
+  width: 7px;
+  height: 7px;
+  background: #2dd4bf;
+  margin-left: -3.5px;
+  margin-top: -3.5px;
+}
+
+.custom-cursor-ring {
+  width: 34px;
+  height: 34px;
+  margin-left: -17px;
+  margin-top: -17px;
+  border: 1px solid rgba(45, 212, 191, 0.65);
+  transition:
+    width 0.25s ease,
+    height 0.25s ease,
+    margin 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.custom-cursor-ring.cursor-hover {
+  width: 52px;
+  height: 52px;
+  margin-left: -26px;
+  margin-top: -26px;
+  border-color: #2dd4bf;
+  background: rgba(45, 212, 191, 0.06);
+}
+
+
+/* Cursor-following glow */
+
+.skill-card,
+.project-card,
+.resume-info-card,
+.work-card,
+.tech-item,
+.focus-card,
+.journey-highlights > div {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before,
+.project-card::before,
+.resume-info-card::before,
+.work-card::before,
+.tech-item::before,
+.focus-card::before,
+.journey-highlights > div::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  left: var(--mouse-x, 50%);
+  top: var(--mouse-y, 50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(45, 212, 191, 0.12) 0%,
+    rgba(45, 212, 191, 0.04) 35%,
+    transparent 70%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.skill-card:hover::before,
+.project-card:hover::before,
+.resume-info-card:hover::before,
+.work-card:hover::before,
+.tech-item:hover::before,
+.focus-card:hover::before,
+.journey-highlights > div:hover::before {
+  opacity: 1;
+}
+
+
+/* Keep card content above the glow */
+
+.skill-card > *,
+.project-card > *,
+.resume-info-card > *,
+.work-card > *,
+.tech-item > *,
+.focus-card > *,
+.journey-highlights > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Disable custom cursor on touch devices */
+
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: none;
+  }
+}
+
+
+/* Respect reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: none;
+  }
+}
