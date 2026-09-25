@@ -30,6 +30,15 @@ function Home() {
     "Git & GitHub",
     "Java",
     "DSA",
+    "SQL",
+    "JWT & Authentication",
+    "Bootstrap",
+    "EJS",
+    "Gemini API",
+    "Cloudinary",
+    "Mapbox",
+    "Razorpay",
+    "Postman"
   ];
 
   useEffect(() => {
