@@ -661,9 +661,91 @@ nav {
   min-height: 520px;
   margin: 0 auto 100px;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
   align-items: center;
-  gap: 60px;
+  gap: 50px;
+}
+
+.resume-hero-visual {
+  width: 100%;
+  max-width: 440px;
+  min-height: 360px;
+  justify-self: end;
+  display: grid;
+  place-items: center;
+}
+
+.resume-hero-view-btn {
+  position: relative;
+  min-width: 250px;
+  min-height: 78px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 0 30px;
+  overflow: hidden;
+  border: 1px solid #2dd4bf;
+  border-radius: 16px;
+  background: linear-gradient(110deg, #2dd4bf, #5eead4);
+  box-shadow: 0 0 32px rgba(45, 212, 191, 0.2);
+  color: #06201d;
+  font-size: 17px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: resume-button-glow 3s ease-in-out infinite;
+}
+
+.resume-hero-view-btn::before {
+  position: absolute;
+  top: -50%;
+  bottom: -50%;
+  left: -45%;
+  width: 35%;
+  transform: rotate(22deg);
+  background: rgba(255, 255, 255, 0.45);
+  content: "";
+  animation: resume-button-shine 4s ease-in-out infinite;
+}
+
+.resume-hero-view-btn:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 38px rgba(45, 212, 191, 0.38);
+}
+
+.resume-hero-view-btn span {
+  font-size: 22px;
+  transition: transform 0.25s ease;
+}
+
+.resume-hero-view-btn:hover span {
+  transform: translate(3px, -3px);
+}
+
+@keyframes resume-button-glow {
+  0%, 100% {
+    box-shadow: 0 0 24px rgba(45, 212, 191, 0.16);
+  }
+  50% {
+    box-shadow: 0 0 42px rgba(45, 212, 191, 0.36);
+  }
+}
+
+@keyframes resume-button-shine {
+  0%, 55% {
+    left: -45%;
+  }
+  85%, 100% {
+    left: 125%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resume-hero-view-btn,
+  .resume-hero-view-btn::before {
+    animation: none;
+  }
 }
 
 .resume-badge,
@@ -707,7 +789,6 @@ nav {
 }
 
 .resume-primary-btn,
-.resume-secondary-btn,
 .resume-contact-btn {
   display: inline-flex;
   align-items: center;
@@ -730,19 +811,6 @@ nav {
 .resume-primary-btn:hover {
   transform: translateY(-3px);
   background: #5eead4;
-}
-
-.resume-secondary-btn {
-  color: #e2e8f0;
-  background: #111827;
-  border: 1px solid #334155;
-}
-
-.resume-secondary-btn:hover {
-  transform: translateY(-3px);
-  color: #2dd4bf;
-  border-color: #2dd4bf;
-  background: #141e2d;
 }
 
 /* The visual resume preview is intentionally hidden. */
@@ -876,6 +944,11 @@ nav {
     padding: 70px 5%;
   }
 
+  .resume-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+    gap: 28px;
+  }
+
   .resume-info-grid {
     grid-template-columns: 1fr;
   }
@@ -889,6 +962,13 @@ nav {
   .resume-hero {
     min-height: auto;
     margin-bottom: 80px;
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .resume-hero-visual {
+    min-height: 280px;
+    justify-self: center;
   }
 
   .resume-hero h1 {
@@ -921,12 +1001,20 @@ nav {
     font-size: 39px;
   }
 
+  .resume-hero-visual {
+    min-height: 220px;
+  }
+
+  .resume-hero-view-btn {
+    min-width: 220px;
+    min-height: 68px;
+  }
+
   .resume-actions {
     flex-direction: column;
   }
 
-  .resume-primary-btn,
-  .resume-secondary-btn {
+  .resume-primary-btn {
     width: 100%;
   }
 
@@ -2214,8 +2302,7 @@ nav {
     flex-direction: column;
   }
 
-  .resume-primary-btn,
-  .resume-secondary-btn {
+  .resume-primary-btn {
     width: 100%;
   }
 

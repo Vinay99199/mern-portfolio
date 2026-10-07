@@ -21,25 +21,18 @@ function Resume() {
             and experience as an aspiring Full Stack Developer.
           </p>
 
-          <div className="resume-actions">
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="resume-primary-btn"
-            >
-              View Resume
-            </a>
-
-            <a
-              href="/resume.pdf"
-              download
-              className="resume-secondary-btn"
-            >
-              Download PDF
-            </a>
-          </div>
         </div>
+
+        <aside className="resume-hero-visual">
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="resume-hero-view-btn"
+          >
+            View Resume <span aria-hidden="true">↗</span>
+          </a>
+        </aside>
       </section>
 
       {/* Profile */}
