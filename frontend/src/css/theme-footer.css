@@ -1,0 +1,119 @@
+.site-footer {
+  padding: 2.5rem 0 1.6rem;
+  border-top: 1px solid var(--border);
+  background: rgba(8, 13, 26, 0.92);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 0.8fr 0.9fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.footer-branding {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(129, 140, 248, 0.18));
+  border: 1px solid rgba(34, 211, 238, 0.18);
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.footer-branding h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: -0.05em;
+}
+
+.footer-branding h3 span {
+  color: var(--primary);
+}
+
+.footer-branding p,
+.footer-nav a,
+.footer-bottom p {
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.footer-links-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer-label {
+  color: var(--primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-nav a {
+  width: fit-content;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus-visible,
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.footer-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+.footer-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 0 5px rgba(52, 211, 153, 0.12);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 1.7rem auto 0;
+  padding: 1.1rem 24px 0;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.back-to-top {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}

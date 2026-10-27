@@ -1,79 +1,68 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from "react";
+
+const dashboardLinks = [
+  { label: "Home", href: "/#top" },
+  { label: "About", href: "/#about" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact", href: "/#contact" },
+  { label: "Resume", href: "/resume.pdf", external: true },
+];
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation();
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const isActive = (path) => {
-    return location.pathname === path ? 'active' : '';
-  };
+  const toggleMenu = () => setMenuOpen((value) => !value);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav>
-      <div className="navbar">
-        <Link to="/" className="logo">
+    <nav className="topbar">
+      <div className="navbar container-shell">
+        <a href="/#top" className="logo" onClick={closeMenu}>
           Vinay<span>.dev</span>
-        </Link>
+        </a>
 
         <ul className="nav-links">
-          <li>
-            <Link to="/" className={isActive('/')}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className={isActive('/about')}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/projects" className={isActive('/projects')}>
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link to="/resume" className={isActive('/resume')}>
-              Resume
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className={isActive('/contact')}>
-              Contact
-            </Link>
-          </li>
+          {dashboardLinks.map((item) => (
+            <li key={item.label}>
+              <a
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noreferrer" : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
         </ul>
 
-        <div className="hamburger" onClick={toggleMenu}>
+        <button
+          type="button"
+          className="hamburger"
+          onClick={toggleMenu}
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
+        >
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
       </div>
 
-      {menuOpen && (
-        <div className="mobile-menu active">
-          <Link to="/" onClick={() => setMenuOpen(false)}>
-            Home
-          </Link>
-          <Link to="/about" onClick={() => setMenuOpen(false)}>
-            About
-          </Link>
-          <Link to="/projects" onClick={() => setMenuOpen(false)}>
-            Projects
-          </Link>
-          <Link to="/resume" onClick={() => setMenuOpen(false)}>
-            Resume
-          </Link>
-          <Link to="/contact" onClick={() => setMenuOpen(false)}>
-            Contact
-          </Link>
-        </div>
-      )}
+      <div id="mobile-navigation" className={`mobile-menu ${menuOpen ? "active" : ""}`}>
+        {dashboardLinks.map((item) => (
+          <a
+            href={item.href}
+            key={item.label}
+            target={item.external ? "_blank" : undefined}
+            rel={item.external ? "noreferrer" : undefined}
+            onClick={closeMenu}
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
     </nav>
   );
 }

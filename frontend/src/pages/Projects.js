@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ProjectCard from "../components/ProjectCard";
 import ScrollReveal from "../components/ScrollReveal";
+import { avonexProject, ensureAvonexProject } from "../utils/featuredProjects";
 
 const API =
   import.meta.env.VITE_API_BASE_URL ||
@@ -16,14 +17,15 @@ function Projects() {
       try {
         const response = await axios.get(`${API}/api/projects`);
 
-        const projectsData = response.data.data || [];
+        const projectsData = ensureAvonexProject(response.data.data || []);
 
         // Fixed project order
         const order = {
           Wanderlust: 1,
           "InterviewAI – AI-Powered Job Preparation Platform": 2,
-          "URL Shortener": 3,
-          "Full Stack Portfolio Website": 4,
+          "AVONEX – Verified Smart Ride-Sharing Platform": 3,
+          "URL Shortener": 4,
+          "Full Stack Portfolio Website": 5,
         };
 
         const sortedProjects = [...projectsData].sort((a, b) => {
@@ -33,6 +35,7 @@ function Projects() {
         setProjects(sortedProjects);
       } catch (error) {
         console.error("Error fetching projects:", error);
+        setProjects([avonexProject]);
       } finally {
         setLoading(false);
       }
@@ -42,16 +45,25 @@ function Projects() {
   }, []);
 
   return (
-    <div className="page-container">
-
+    <main className="page-container projects-page">
       <ScrollReveal>
-        <h1>My Projects</h1>
+        <header className="projects-page-header">
+          <span className="eyebrow">Selected work</span>
+          <h1>Projects built to solve real problems.</h1>
+          <p>
+            A collection of full-stack applications, experiments, and tools
+            built through hands-on learning.
+          </p>
+        </header>
       </ScrollReveal>
 
       {loading ? (
-        <p>Loading projects...</p>
+        <div className="projects-page-state" role="status">
+          <span className="projects-loading-indicator" aria-hidden="true"></span>
+          <p>Loading projects...</p>
+        </div>
       ) : projects.length > 0 ? (
-        <div className="projects-grid">
+        <div className="projects-grid projects-gallery">
           {projects.map((project) => (
             <ScrollReveal key={project._id}>
               <ProjectCard project={project} />
@@ -59,10 +71,11 @@ function Projects() {
           ))}
         </div>
       ) : (
-        <p>No projects found</p>
+        <div className="projects-page-state">
+          <p>No projects found.</p>
+        </div>
       )}
-
-    </div>
+    </main>
   );
 }
 

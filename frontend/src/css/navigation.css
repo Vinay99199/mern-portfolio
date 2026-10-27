@@ -1,0 +1,129 @@
+/* Navbar */
+nav {
+  background: #111827;
+  border-bottom: 1px solid #263244;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  max-width: 1160px;
+  min-height: 72px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: #f8fafc;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #2dd4bf;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+}
+
+.nav-links a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 13px;
+  border-radius: 9px;
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #f8fafc;
+  background: #172033;
+}
+
+.nav-links a.active {
+  color: #2dd4bf;
+  background: rgba(45, 212, 191, 0.08);
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 2px;
+  background: #2dd4bf;
+}
+
+.hamburger {
+  width: 42px;
+  height: 42px;
+  padding: 10px;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid #263244;
+  border-radius: 10px;
+  background: #111827;
+}
+
+.hamburger span {
+  width: 19px;
+  height: 2px;
+  background: #e2e8f0;
+  border-radius: 2px;
+  transition: 0.2s ease;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  gap: 4px;
+  flex-direction: column;
+  background: #0f172a;
+  border-bottom: 1px solid #263244;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.28);
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+.mobile-menu a {
+  padding: 13px 14px;
+  border-radius: 9px;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.mobile-menu a:hover {
+  background: #172033;
+  color: #2dd4bf;
+}
+
+
+
+

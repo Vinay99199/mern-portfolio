@@ -1,0 +1,43 @@
+/* 
+Overview of the CSS structure:
+Home → Navbar → Hero → Intro → Skills → Projects → Contact
+Projects page
+Resume
+Contact page
+About page
+Footer
+ */ 
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ :root {
+  --primary: #2dd4bf;
+  --primary-soft: rgba(45, 212, 191, 0.08);
+  --dark: #f8fafc;
+  --accent: #2dd4bf;
+  --bg: #0b1120;
+  --card: #111827;
+  --text: #f1f5f9;
+  --text-light: #94a3b8;
+  --border: #263244;
+  --container: 1160px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 16px 35px rgba(0, 0, 0, 0.22);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg);
+  color: var(--text);
+}
+

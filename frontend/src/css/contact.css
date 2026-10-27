@@ -1,0 +1,207 @@
+/* Contact page */
+.contact-page {
+  max-width: 1160px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 80px 24px;
+  background: #0b1120;
+  color: #f1f5f9;
+}
+
+.contact-header {
+  max-width: 700px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.contact-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid rgba(45, 212, 191, 0.2);
+  border-radius: 30px;
+  background: rgba(45, 212, 191, 0.08);
+  color: #2dd4bf;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.contact-header h1 {
+  margin: 1rem 0;
+  color: #f8fafc;
+  font-size: 2.7rem;
+}
+
+.contact-header p {
+  color: #94a3b8;
+  line-height: 1.7;
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 2rem;
+}
+
+.contact-form-card,
+.direct-email-card {
+  padding: 2rem;
+  background: #111827;
+  border: 1px solid #263244;
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+.contact-page-form {
+  width: 100%;
+}
+
+.contact-page-group {
+  margin-bottom: 1.3rem;
+}
+
+.contact-page-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.contact-page-group input,
+.contact-page-group textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.9rem;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background: #0b1120;
+  color: #f1f5f9;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.contact-page-group input::placeholder,
+.contact-page-group textarea::placeholder {
+  color: #64748b;
+}
+
+.contact-page-group textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-page-group input:focus,
+.contact-page-group textarea:focus {
+  outline: none;
+  border-color: #2dd4bf;
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.08);
+}
+
+.contact-page-submit-btn {
+  width: 100%;
+  padding: 0.9rem;
+  border: 1px solid #2dd4bf;
+  border-radius: 8px;
+  background: #2dd4bf;
+  color: #06201d;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.contact-page-submit-btn:hover {
+  background: #5eead4;
+}
+
+.contact-page-message {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.contact-page-message.success {
+  background: rgba(45, 212, 191, 0.08);
+  color: #5eead4;
+  border: 1px solid rgba(45, 212, 191, 0.25);
+}
+
+.contact-page-message.error {
+  background: rgba(248, 113, 113, 0.08);
+  color: #fca5a5;
+  border: 1px solid rgba(248, 113, 113, 0.25);
+}
+
+.direct-email-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.email-icon {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(45, 212, 191, 0.08);
+  color: #2dd4bf;
+  font-size: 2rem;
+}
+
+.email-address {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid rgba(45, 212, 191, 0.15);
+  border-radius: 10px;
+  background: rgba(45, 212, 191, 0.05);
+}
+
+.email-address span {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #64748b;
+  font-size: 0.75rem;
+}
+
+.email-address strong {
+  color: #2dd4bf;
+  word-break: break-word;
+}
+
+.email-btn {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.9rem;
+  border: 1px solid #2dd4bf;
+  border-radius: 8px;
+  color: #2dd4bf;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.email-btn:hover {
+  background: #2dd4bf;
+  color: #06201d;
+}
+
+.email-note {
+  margin-top: 1rem;
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 800px) {
+  .contact-page {
+    padding: 60px 20px;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+

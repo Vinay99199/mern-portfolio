@@ -1,0 +1,408 @@
+/* Responsive */
+@media (max-width: 1000px) {
+  .about-page {
+    padding: 70px 5%;
+  }
+
+  .about-hero {
+    gap: 40px;
+  }
+
+  .about-profile-card {
+    width: 280px;
+    min-width: 280px;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 950px) {
+  .page-container .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero {
+    gap: 45px;
+    padding-top: 58px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .about-hero {
+    min-height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .about-profile-card {
+    width: 100%;
+    max-width: 400px;
+    align-self: center;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-card:nth-child(2) {
+    border-right: none;
+  }
+
+  .stat-card:nth-child(-n + 2) {
+    border-bottom: 1px solid #263244;
+  }
+
+  .journey-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .what-i-do-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-goal {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-intro {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 65px 20px;
+  }
+
+  .home-intro h2 {
+    font-size: 36px;
+  }
+
+  .home-contact {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 65px 20px 75px;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-page {
+    padding: 60px 20px;
+  }
+
+  .navbar {
+    min-height: 66px;
+    padding: 0 18px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 58px 20px 70px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.8rem, 13vw, 4.2rem);
+  }
+
+  .hero-content .typing {
+    min-height: 42px;
+    font-size: 1.55rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-image {
+    justify-content: center;
+  }
+
+  .hero-image {
+  min-height: 350px;
+}
+
+.hero-image::before {
+  width: 330px;
+  height: 330px;
+}
+
+.hero-image::after {
+  width: 300px;
+  height: 300px;
+}
+
+.hero-image img {
+  max-width: 300px;
+  border-radius: 50%;
+}
+
+  .skills,
+  .projects-section,
+  .home-contact {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .projects-section .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer-content {
+    padding: 35px 20px 20px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-connect {
+    justify-self: start;
+  }
+
+  .footer-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .footer-links a {
+    min-width: auto;
+  }
+
+  .footer-links a span {
+    display: none;
+  }
+
+  .resume-page {
+    padding: 55px 20px;
+  }
+
+  .resume-hero {
+    min-height: auto;
+    margin-bottom: 80px;
+  }
+
+  .resume-hero h1 {
+    font-size: 46px;
+    letter-spacing: -2px;
+  }
+
+  .resume-hero > div:first-child > p {
+    font-size: 16px;
+  }
+
+  .resume-info,
+  .resume-skills {
+    margin-bottom: 80px;
+  }
+
+  .resume-cta {
+    padding: 38px 28px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-page {
+    padding: 50px 18px;
+  }
+
+  .about-hero {
+    margin-bottom: 50px;
+  }
+
+  .about-hero h1 {
+    font-size: 43px;
+    letter-spacing: -2px;
+  }
+
+  .about-hero-content > p {
+    font-size: 16px;
+  }
+
+  .about-stats {
+    margin-bottom: 70px;
+  }
+
+  .stat-card {
+    padding: 22px 10px;
+  }
+
+  .stat-card h3 {
+    font-size: 25px;
+  }
+
+  .about-section {
+    margin-bottom: 75px;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .education-card {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 25px;
+  }
+
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-goal {
+    padding: 35px 25px;
+  }
+
+  .page-container {
+    padding: 35px 16px 50px;
+  }
+
+  .page-container > h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  .project-image {
+    height: 210px;
+  }
+
+  .project-content {
+    padding: 20px;
+  }
+
+  .project-links {
+    gap: 10px;
+  }
+
+  .project-links a {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .home-contact-form {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .about-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    padding-top: 45px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.85rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+
+  .skill-card {
+    min-height: 70px;
+    padding: 14px 8px;
+  }
+}
+
+@media (max-width: 450px) {
+  .resume-page {
+    padding: 45px 15px;
+  }
+
+  .resume-hero h1 {
+    font-size: 39px;
+  }
+
+  .resume-actions {
+    flex-direction: column;
+  }
+
+  .resume-primary-btn {
+    width: 100%;
+  }
+
+  .resume-section-heading {
+    margin-bottom: 30px;
+  }
+
+  .resume-info-card {
+    min-height: auto;
+    padding: 25px;
+  }
+
+  .resume-cta h2 {
+    font-size: 29px;
+  }
+
+  .resume-contact-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .about-hero h1 {
+    font-size: 37px;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero-buttons {
+    flex-direction: column;
+  }
+
+  .about-primary-btn,
+  .about-secondary-btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+

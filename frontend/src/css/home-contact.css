@@ -1,0 +1,129 @@
+/* Home contact */
+.home-contact {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 78px 24px 90px;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 70px;
+  align-items: start;
+  background: #0b1120;
+  border-top: 1px solid #263244;
+}
+
+.home-contact h2 {
+  margin: 0 0 22px;
+  color: #f8fafc;
+  text-align: left;
+  font-size: clamp(2rem, 4vw, 2.65rem);
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+
+.home-contact h2 span {
+  color: #2dd4bf;
+}
+
+.contact-intro p {
+  max-width: 420px;
+  margin: 0;
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.home-contact-form {
+  max-width: 720px;
+  margin: 0;
+  padding: 28px;
+  background: #111827;
+  border: 1px solid #263244;
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+.home-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.home-form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.home-form-group input,
+.home-form-group textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #334155;
+  border-radius: 9px;
+  background: #0b1120;
+  color: #f1f5f9;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-form-group input::placeholder,
+.home-form-group textarea::placeholder {
+  color: #64748b;
+}
+
+.home-form-group input:focus,
+.home-form-group textarea:focus {
+  outline: none;
+  border-color: #2dd4bf;
+  box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.08);
+}
+
+.home-form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.home-submit-btn {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid #2dd4bf;
+  border-radius: 9px;
+  background: #2dd4bf;
+  color: #06201d;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.home-submit-btn:hover {
+  background: #5eead4;
+  box-shadow: 0 10px 20px rgba(45, 212, 191, 0.12);
+}
+
+.home-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.home-message {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.home-message.success {
+  background: rgba(45, 212, 191, 0.08);
+  color: #5eead4;
+  border: 1px solid rgba(45, 212, 191, 0.25);
+}
+
+.home-message.error {
+  background: rgba(248, 113, 113, 0.08);
+  color: #fca5a5;
+  border: 1px solid rgba(248, 113, 113, 0.25);
+}
+

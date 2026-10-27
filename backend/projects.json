@@ -20,6 +20,15 @@
     "displayOrder": 2
   },
   {
+    "title": "AVONEX – Verified Smart Ride-Sharing Platform",
+    "description": "A verified carpooling platform for employees and students with secure authentication, organization verification, driver approval, ride creation, seat booking, and booking management.",
+    "githubLink": "https://github.com/Vinay99199/ride-share",
+    "liveLink": "",
+    "featured": true,
+    "featuredOrder": 3,
+    "displayOrder": 3
+  },
+  {
     "title": "URL Shortener",
     "description": "A MERN stack web application that converts long URLs into short, shareable links with QR code generation and instant redirection.",
     "image": "https://smythos.com/wp-content/uploads/2024/10/url1-interface.png",
@@ -27,7 +36,7 @@
     "liveLink": "https://url-d6s3.onrender.com",
     "featured": false,
     "featuredOrder": 999,
-    "displayOrder": 3
+    "displayOrder": 4
   },
   {
     "title": "Full Stack Portfolio Website",
@@ -37,6 +46,6 @@
     "liveLink": "https://portfolio-gywg.onrender.com",
     "featured": false,
     "featuredOrder": 999,
-    "displayOrder": 4
+    "displayOrder": 5
   }
 ]

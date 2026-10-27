@@ -25,7 +25,7 @@ exports.getFeaturedProjects = async (req, res) => {
   try {
     const projects = await Project.find({ featured: true })
       .sort({ featuredOrder: 1 })
-      .limit(2);
+      .limit(3);
 
     res.status(200).json({
       success: true,

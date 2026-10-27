@@ -1,0 +1,100 @@
+.about-section,
+.skills-section,
+.featured-projects,
+.journey-section,
+.connect-section {
+  padding-top: 4.25rem;
+  padding-bottom: 4.25rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.section-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.section-heading-row h2,
+.about-copy h2,
+.connect-copy h2 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.06em;
+}
+
+.section-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(34, 211, 238, 0.38);
+  color: #f1f5f9;
+  font-weight: 700;
+  text-decoration: none;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 211, 238, 0.25),
+    rgba(129, 140, 248, 0.2)
+  );
+}
+
+.section-link:hover {
+  border-color: rgba(34, 211, 238, 0.56);
+  background: linear-gradient(
+    135deg,
+    rgba(34, 211, 238, 0.34),
+    rgba(129, 140, 248, 0.27)
+  );
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-copy p {
+  margin: 0 0 1rem;
+  color: var(--text-soft);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.about-highlights {
+  display: grid;
+  gap: 1rem;
+}
+
+.highlight-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.2rem 1.1rem;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(17, 27, 46, 0.9), rgba(21, 34, 56, 0.72));
+}
+
+.highlight-card span {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.highlight-card h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}

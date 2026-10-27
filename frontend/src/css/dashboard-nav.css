@@ -1,0 +1,56 @@
+.topbar .navbar {
+  gap: 1rem;
+}
+
+.topbar .nav-links {
+  flex: 1;
+  justify-content: flex-end;
+  gap: 0.2rem;
+  white-space: nowrap;
+}
+
+.topbar .nav-links a {
+  min-height: 40px;
+  padding: 0 0.7rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.topbar .nav-links a::after {
+  content: none;
+}
+
+.topbar .mobile-menu a {
+  text-decoration: none;
+}
+
+.topbar .resume-link {
+  margin-left: 0.35rem;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+}
+
+.topbar .mobile-menu {
+  max-height: calc(100vh - 76px);
+  overflow-y: auto;
+}
+
+.topbar .mobile-menu a {
+  justify-content: flex-start;
+  min-height: 44px;
+  color: #cbd5e1;
+}
+
+.topbar .mobile-menu a:hover {
+  color: #22d3ee;
+  background: rgba(34, 211, 238, 0.07);
+}
+
+@media (max-width: 1050px) {
+  .topbar .nav-links {
+    display: none;
+  }
+
+  .topbar .hamburger {
+    display: block;
+  }
+}

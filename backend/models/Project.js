@@ -18,8 +18,10 @@ const projectSchema = new mongoose.Schema(
 
     image: {
       type: String,
-      required: [true, "Please provide an image URL"],
-      match: [/^https?:\/\/.+/, "Please provide a valid image URL"]    },
+      default: "",
+      trim: true,
+      match: [/^$|^https?:\/\/.+/, "Please provide a valid image URL"]
+    },
 
     githubLink: {
       type: String,

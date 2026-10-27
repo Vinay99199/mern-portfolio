@@ -1,0 +1,80 @@
+.connect-section {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.connect-copy p {
+  color: var(--text-soft);
+  line-height: 1.8;
+  margin: 1rem 0 1.5rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  background: rgba(17, 27, 46, 0.82);
+  box-shadow: var(--shadow);
+}
+
+.contact-form .submit-button {
+  cursor: pointer;
+}
+
+.contact-form .submit-button:disabled {
+  cursor: not-allowed;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field-group label {
+  color: var(--text-soft);
+  font-weight: 600;
+}
+
+.field-group input,
+.field-group textarea {
+  width: 100%;
+  padding: 0.9rem 0.95rem;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 12px;
+  background: rgba(8, 13, 26, 0.46);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field-group input:focus,
+.field-group textarea:focus {
+  border-color: rgba(34, 211, 238, 0.7);
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.12);
+}
+
+.field-group textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.contact-status {
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.24);
+  color: #bbf7d0;
+  font-size: 0.88rem;
+}

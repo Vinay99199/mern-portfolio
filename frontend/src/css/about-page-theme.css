@@ -1,0 +1,355 @@
+.about-page {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100vh;
+  padding: 3.5rem 24px 6rem;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 82% 4%, rgba(129, 140, 248, 0.13), transparent 34%),
+    radial-gradient(ellipse at 5% 30%, rgba(34, 211, 238, 0.07), transparent 30%),
+    #080d1a;
+  color: #f1f5f9;
+}
+
+.about-page::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+  content: "";
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, black, transparent 75%);
+}
+
+.about-page .about-hero,
+.about-page .about-stats,
+.about-page .about-section,
+.about-page .about-goal {
+  width: min(100%, 1120px);
+}
+
+.about-page .about-hero {
+  min-height: 460px;
+  margin: 0 auto 4rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: clamp(2.5rem, 7vw, 6rem);
+}
+
+.about-page .about-hero-content {
+  max-width: 700px;
+}
+
+.about-page .about-badge {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  border-radius: 999px;
+  background: rgba(34, 211, 238, 0.07);
+  color: #22d3ee;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+}
+
+.about-page .about-hero h1 {
+  margin: 0;
+  color: #f1f5f9;
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.07em;
+}
+
+.about-page .about-hero h1 span {
+  color: #22d3ee;
+}
+
+.about-page .about-hero-content > p {
+  max-width: 620px;
+  margin: 1.5rem 0 1.8rem;
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.about-page .about-primary-btn,
+.about-page .about-secondary-btn,
+.about-page .about-contact-btn {
+  min-height: 48px;
+  padding: 0 1.2rem;
+  border-radius: 12px;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.about-page .about-primary-btn {
+  border-color: #22d3ee;
+  background: #22d3ee;
+  color: #062a35;
+}
+
+.about-page .about-primary-btn:hover,
+.about-page .about-contact-btn:hover {
+  transform: translateY(-2px);
+  background: #67e8f9;
+}
+
+.about-page .about-secondary-btn {
+  border-color: rgba(148, 163, 184, 0.2);
+  background: rgba(17, 27, 46, 0.68);
+  color: #cbd5e1;
+}
+
+.about-page .about-secondary-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(34, 211, 238, 0.48);
+  color: #22d3ee;
+}
+
+.about-page .about-profile-card {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  padding: 2rem 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 24px;
+  background: linear-gradient(150deg, rgba(21, 34, 56, 0.94), rgba(13, 20, 36, 0.92));
+  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.28);
+}
+
+.about-page .profile-circle {
+  width: 138px;
+  height: 138px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(34, 211, 238, 0.38);
+  background:
+    radial-gradient(circle at 30% 25%, rgba(129, 140, 248, 0.27), transparent 60%),
+    #0d1424;
+  box-shadow: 0 0 55px rgba(34, 211, 238, 0.1);
+}
+
+.about-page .profile-circle span {
+  color: #22d3ee;
+  font-size: 2.8rem;
+}
+
+.about-page .about-profile-card h3 {
+  color: #f1f5f9;
+}
+
+.about-page .about-profile-card > p {
+  color: #94a3b8;
+}
+
+.about-page .profile-status {
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  background: rgba(8, 13, 26, 0.58);
+  color: #cbd5e1;
+}
+
+.about-page .profile-status span {
+  background: #34d399;
+  box-shadow: 0 0 0 5px rgba(52, 211, 153, 0.1);
+}
+
+.about-page .about-stats {
+  margin: 0 auto 6rem;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 20px;
+  background: rgba(17, 27, 46, 0.72);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.15);
+}
+
+.about-page .stat-card {
+  padding: 1.65rem 1rem;
+  border-color: rgba(148, 163, 184, 0.13);
+}
+
+.about-page .stat-card h3 {
+  color: #22d3ee;
+  font-size: 1.9rem;
+  letter-spacing: -0.05em;
+}
+
+.about-page .stat-card p {
+  color: #94a3b8;
+}
+
+.about-page .about-section {
+  display: block;
+  margin: 0 auto 6rem;
+}
+
+.about-page .section-heading {
+  max-width: 760px;
+  margin-bottom: 2rem;
+}
+
+.about-page .section-heading span,
+.about-page .about-goal > div > span {
+  color: #22d3ee;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+}
+
+.about-page .section-heading h2 {
+  color: #f1f5f9;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.06em;
+}
+
+.about-page .journey-content {
+  gap: 2.5rem;
+}
+
+.about-page .journey-text p,
+.about-page .journey-highlights p,
+.about-page .work-card p,
+.about-page .focus-card p,
+.about-page .about-goal p {
+  color: #94a3b8;
+}
+
+.about-page .journey-highlights > div,
+.about-page .work-card,
+.about-page .tech-item,
+.about-page .education-card,
+.about-page .focus-card {
+  border-color: rgba(148, 163, 184, 0.16);
+  border-radius: 18px;
+  background: rgba(17, 27, 46, 0.72);
+}
+
+.about-page .journey-highlights > div:hover,
+.about-page .work-card:hover,
+.about-page .tech-item:hover,
+.about-page .focus-card:hover {
+  border-color: rgba(34, 211, 238, 0.38);
+  background: #152238;
+}
+
+.about-page .journey-highlights span,
+.about-page .focus-card > span,
+.about-page .work-icon,
+.about-page .education-year {
+  color: #22d3ee;
+}
+
+.about-page .journey-highlights h3,
+.about-page .work-card h3,
+.about-page .tech-item strong,
+.about-page .education-card h3,
+.about-page .focus-card h3,
+.about-page .about-goal h2 {
+  color: #f1f5f9;
+}
+
+.about-page .work-icon {
+  border: 1px solid rgba(34, 211, 238, 0.18);
+  border-radius: 12px;
+  background: rgba(34, 211, 238, 0.08);
+}
+
+.about-page .tech-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.about-page .tech-item {
+  padding: 1.2rem;
+}
+
+.about-page .tech-item span,
+.about-page .education-card span {
+  color: #94a3b8;
+}
+
+.about-page .education-card p {
+  color: #cbd5e1;
+}
+
+.about-page .about-goal {
+  padding: clamp(1.7rem, 4vw, 3rem);
+  border-color: rgba(34, 211, 238, 0.2);
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at 90% 15%, rgba(129, 140, 248, 0.14), transparent 40%),
+    linear-gradient(145deg, #111b2e, #0d1424);
+}
+
+.about-page .about-contact-btn {
+  border-color: #22d3ee;
+  background: #22d3ee;
+  color: #062a35;
+}
+
+@media (max-width: 800px) {
+  .about-page {
+    padding: 3rem 20px 4rem;
+  }
+
+  .about-page .about-hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    margin-bottom: 3rem;
+  }
+
+  .about-page .about-profile-card {
+    width: min(100%, 400px);
+    justify-self: center;
+  }
+
+  .about-page .about-stats {
+    margin-bottom: 4rem;
+  }
+
+  .about-page .about-section {
+    margin-bottom: 4.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-page .about-hero h1 {
+    font-size: clamp(2.65rem, 12vw, 3.6rem);
+  }
+
+  .about-page .about-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-page .stat-card:nth-child(2) {
+    border-right: 0;
+  }
+
+  .about-page .stat-card:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(148, 163, 184, 0.13);
+  }
+
+  .about-page .what-i-do-grid,
+  .about-page .focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-page .tech-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-page .education-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.4rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .about-page .about-hero-buttons {
+    flex-direction: column;
+  }
+
+  .about-page .about-primary-btn,
+  .about-page .about-secondary-btn,
+  .about-page .about-contact-btn {
+    width: 100%;
+  }
+}
