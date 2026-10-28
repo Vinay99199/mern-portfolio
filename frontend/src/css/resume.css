@@ -170,9 +170,66 @@
 }
 
 .resume-info,
+.resume-education,
 .resume-skills {
   max-width: 1200px;
   margin: 0 auto 110px;
+}
+
+.resume-education-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 35px;
+  align-items: center;
+  padding: 35px;
+  background: #111827;
+  border: 1px solid #263244;
+  border-radius: 18px;
+  transition: 0.25s ease;
+}
+
+.resume-education-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(45, 212, 191, 0.4);
+  background: #141e2d;
+}
+
+.resume-education-year {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid #263244;
+}
+
+.resume-education-year span {
+  color: #2dd4bf;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.resume-education-year small {
+  margin-top: 8px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.resume-education-details h3 {
+  margin: 0 0 8px;
+  color: #f1f5f9;
+  font-size: 22px;
+}
+
+.resume-education-details p {
+  margin: 0 0 12px;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.resume-education-details > span {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 .resume-section-heading {
@@ -332,8 +389,22 @@
   }
 
   .resume-info,
+  .resume-education,
   .resume-skills {
     margin-bottom: 80px;
+  }
+
+  .resume-education-card {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 28px;
+  }
+
+  .resume-education-year {
+    min-height: 0;
+    padding-bottom: 20px;
+    border-right: none;
+    border-bottom: 1px solid #263244;
   }
 
   .resume-cta {

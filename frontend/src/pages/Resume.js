@@ -74,6 +74,32 @@ function Resume() {
         </section>
       </ScrollReveal>
 
+      {/* Education */}
+      <ScrollReveal>
+        <section className="resume-education">
+          <div className="resume-section-heading">
+            <span>EDUCATION</span>
+            <h2>Academic background.</h2>
+          </div>
+
+          <div className="resume-education-card">
+            <div className="resume-education-year">
+              <span>2023 — 2027</span>
+              <small>Currently Pursuing</small>
+            </div>
+
+            <div className="resume-education-details">
+              <h3>Bachelor of Technology in Computer Science</h3>
+              <p>Kanpur Institute of Technology</p>
+              <span>
+                Building strong foundations in programming, data structures,
+                algorithms, software development, and full-stack web development.
+              </span>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
       {/* Skills */}
       <ScrollReveal>
         <section className="resume-skills">

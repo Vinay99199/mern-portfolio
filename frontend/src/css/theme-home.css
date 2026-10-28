@@ -98,3 +98,94 @@
   margin: 0;
   font-size: 1.15rem;
 }
+
+.education-section {
+  padding-top: 4.25rem;
+  padding-bottom: 4.25rem;
+}
+
+.education-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid rgba(45, 212, 191, 0.28);
+  border-radius: 30px;
+  background: rgba(45, 212, 191, 0.08);
+  color: #5eead4;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.home-education-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 35px;
+  align-items: center;
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(17, 27, 46, 0.92), rgba(21, 34, 56, 0.78));
+  transition: 0.25s ease;
+}
+
+.home-education-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(45, 212, 191, 0.42);
+}
+
+.home-education-period {
+  min-height: 105px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--border);
+}
+
+.home-education-period span {
+  color: var(--primary);
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.home-education-period small {
+  margin-top: 8px;
+  color: var(--text-soft);
+  font-size: 0.78rem;
+}
+
+.home-education-details h3 {
+  margin: 0 0 9px;
+  font-size: 1.35rem;
+}
+
+.home-education-details p {
+  margin: 0 0 12px;
+  color: #cbd5e1;
+  font-weight: 700;
+}
+
+.home-education-details > span {
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .education-section .section-heading-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .home-education-card {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 26px;
+  }
+
+  .home-education-period {
+    min-height: 0;
+    padding-bottom: 20px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
