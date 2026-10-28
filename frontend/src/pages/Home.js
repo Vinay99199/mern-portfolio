@@ -236,34 +236,6 @@ function Home() {
       </ScrollReveal>
 
       <ScrollReveal>
-        <section className="education-section container-shell" id="education">
-          <div className="section-heading-row">
-            <div>
-              <span className="eyebrow">Education</span>
-              <h2>Academic background.</h2>
-            </div>
-            <span className="education-status">Currently pursuing</span>
-          </div>
-
-          <article className="home-education-card">
-            <div className="home-education-period">
-              <span>2023 — 2027</span>
-              <small>B.Tech</small>
-            </div>
-
-            <div className="home-education-details">
-              <h3>Bachelor of Technology in Computer Science</h3>
-              <p>Kanpur Institute of Technology</p>
-              <span>
-                Building strong foundations in programming, data structures,
-                algorithms, software development, and full-stack web development.
-              </span>
-            </div>
-          </article>
-        </section>
-      </ScrollReveal>
-
-      <ScrollReveal>
         <section className="skills-section container-shell" id="skills">
           <div className="section-heading-row">
             <div>
@@ -294,7 +266,9 @@ function Home() {
               <span className="eyebrow">Featured projects</span>
               <h2>Selected work.</h2>
             </div>
-            <Link to="/projects" className="section-link">View All Projects</Link>
+            <Link to="/projects" className="section-link">
+              View All Projects <span className="section-link-arrow" aria-hidden="true">→</span>
+            </Link>
           </div>
 
           {isProjectsLoading ? (
@@ -380,6 +354,34 @@ function Home() {
               </article>
             ))}
           </div>
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <section className="education-section container-shell" id="education">
+          <div className="section-heading-row">
+            <div>
+              <span className="eyebrow">Education</span>
+              <h2>Academic background.</h2>
+            </div>
+            <span className="education-status">Currently pursuing</span>
+          </div>
+
+          <article className="home-education-card">
+            <div className="home-education-period">
+              <span>2023 — 2027</span>
+              <small>B.Tech</small>
+            </div>
+
+            <div className="home-education-details">
+              <h3>Bachelor of Technology in Computer Science</h3>
+              <p>Kanpur Institute of Technology</p>
+              <span>
+                Building strong foundations in programming, data structures,
+                algorithms, software development, and full-stack web development.
+              </span>
+            </div>
+          </article>
         </section>
       </ScrollReveal>
 
