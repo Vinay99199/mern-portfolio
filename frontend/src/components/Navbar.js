@@ -4,8 +4,8 @@ const dashboardLinks = [
   { label: "Home", href: "/#top" },
   { label: "About", href: "/#about" },
   { label: "Skills", href: "/#skills" },
-  { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/#contact" },
+  { label: "Projects", href: "/projects" },
   { label: "Resume", href: "/resume.pdf", external: true },
 ];
 
